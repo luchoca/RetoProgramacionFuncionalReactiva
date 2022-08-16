@@ -21,8 +21,18 @@ public class JugadorController {
     @Autowired // para obtener una instancia a traves de la inyeccion de dependencias
     private IJugadorRepository repository;
 
+    //OPERACIONES PARA MANEJAR UN SERVICIO REST
 
+    @GetMapping
+    public Flux<Jugador> listar() {
 
+        return repository.listar(); //listamos lo que retorna el repository
+    }
+
+    @GetMapping("/{id}")
+    public Mono<Jugador> listarPorId(@PathVariable("id") Integer id) {
+        return repository.listarPorId(id);
+    }
 
 
 }
