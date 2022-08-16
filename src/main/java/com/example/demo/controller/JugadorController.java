@@ -34,5 +34,11 @@ public class JugadorController {
         return repository.listarPorId(id);
     }
 
+    @PostMapping
+    public Mono<Jugador> inscribir(@RequestBody Jugador j) { //obtener valores del body de la peticion http
+
+        return repository.inscribir(j);
+
+    }
 
 }
