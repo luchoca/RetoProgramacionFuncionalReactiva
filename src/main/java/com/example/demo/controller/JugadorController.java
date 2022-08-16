@@ -41,4 +41,16 @@ public class JugadorController {
 
     }
 
+    @PutMapping
+    public Mono<Jugador> cambiar(@RequestBody Jugador j) { //obtener valores del body de la peticion http
+
+        return repository.cambiar(j);
+
+    }
+
+    @DeleteMapping("/{id}")
+    public Mono<Void> eliminar(@PathVariable("id") Integer id) {
+        return repository.eliminar(id);
+    }
+
 }
