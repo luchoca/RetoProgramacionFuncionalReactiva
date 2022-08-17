@@ -1,7 +1,9 @@
 package com.example.demo.model;
 
-public class Jugador {
+import org.springframework.data.annotation.Id;
 
+public class Jugador {
+    @Id
     private Integer idJugador;
     private Integer numero;
     private String nombre;
